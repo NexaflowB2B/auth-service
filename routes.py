@@ -4,7 +4,7 @@ from typing import List, Optional
 
 from dotenv import load_dotenv
 from fastapi import APIRouter, Depends, HTTPException, Query, Header
-from jose import jwt, JWTError
+import jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
@@ -41,7 +41,7 @@ def create_token(data: dict) -> str:
 def decode_token(token: str) -> dict:
     try:
         return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-    except JWTError:
+    except jwt.PyJWTError:
         raise HTTPException(status_code=401, detail="Invalid or expired token")
 
 
