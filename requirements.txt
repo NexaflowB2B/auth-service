@@ -2,7 +2,7 @@ fastapi
 uvicorn[standard]
 sqlalchemy
 psycopg2-binary
-PyJWT[crypto]==2.8.0
+PyJWT[crypto]==2.10.1
 passlib[bcrypt]
 bcrypt<4.0.0
 python-multipart
