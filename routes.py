@@ -8,8 +8,9 @@ import jwt
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 
-from . import models, schemas
-from .database import get_db
+import models
+import schemas
+from database import get_db
 
 load_dotenv()
 
